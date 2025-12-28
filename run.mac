@@ -1,0 +1,20 @@
+# Initialize
+/run/initialize
+
+# Visualize
+/vis/open OGL 600x600-0+0
+/vis/drawVolume
+/vis/viewer/set/viewpointThetaPhi 90 180
+/vis/viewer/zoom 1.5
+/vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/background 0.2 0.2 0.2
+
+# Particle Colors
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set e- red
+/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton green
+
+# Run 50 events (Beta decays)
+# This will generate thousands of green photons!
+/run/beamOn 50
